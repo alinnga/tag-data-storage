@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
@@ -82,6 +81,8 @@ public class TagStorage {
         tagData.put("WinCC_OA.rep_test.theta_e", "0.11");
 
         tagData.put("WinCC_OA.rep_test.theta_N", "0.02");
+        tagData.put("WinCC_OA.rep_test.theta_p", "");
+        tagData.put("WinCC_OA.rep_test.theta_t", "");
 
         tagData.put("WinCC_OA.rep_test.ZS", "0.041");
 
@@ -109,13 +110,21 @@ public class TagStorage {
         tagData.put("WinCC_OA.rep_test.zeroStabilityCorr", "true");
         tagData.put("WinCC_OA.rep_test.operatingOrControlCPM", "контрольный");
         tagData.put("WinCC_OA.rep_test.rangeType", "рабочий диапазон");
+        tagData.put("WinCC_OA.rep_test.protocolNumber", "230");
+
+        tagData.put("ns=0;i=50240", null);
+        tagData.put("ns=0;i=50251", null);
+        tagData.put("ns=0;i=50242", null);
     }
 
     public void generateTags(){
-        Random random = new Random(10);
         double min = 0;
         double max = 1000;
-        
+
+        tagData.put("2hour_mass_il1", ""+ ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("2hour_temp_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("2hour_pressure_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+
         tagData.put("daily_mass_il1", ""+ ThreadLocalRandom.current().nextDouble(min, max));
         tagData.put("daily_temp_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
         tagData.put("daily_pressure_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
@@ -164,6 +173,82 @@ public class TagStorage {
         tagData.put("daily_vol_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
         tagData.put("daily_vol_increasing_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
 
+        tagData.put("daily_power_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("daily_power_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("daily_power_il3", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("daily_power_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("daily_power_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
 
+
+        // hour tags
+        tagData.put("hour_mass_il1", ""+ ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_temp_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_pressure_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+
+        tagData.put("hour_density_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density20_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density15_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_moisture_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_increasing_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_vol_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_vol_increasing_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_temp_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_pressure_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density20_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density15_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_moisture_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_increasing_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+
+        tagData.put("hour_vol_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_vol_increasing_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_temp_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_pressure_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density20_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density15_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_moisture_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_increasing_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_vol_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_vol_increasing_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_temp_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_pressure_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_density20_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+
+        tagData.put("hour_density15_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_moisture_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_mass_gross_increasing_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_vol_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("hour_vol_increasing_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+
+        //shift tags
+        
+        tagData.put("shift_mass_il1", ""+ ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_temp_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_pressure_il1", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        
+        tagData.put("shift_mass_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_temp_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_pressure_il2", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        
+        tagData.put("shift_mass_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_temp_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_pressure_sikn", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        
+        tagData.put("shift_mass_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_temp_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+        tagData.put("shift_pressure_bik", ""+ThreadLocalRandom.current().nextDouble(min, max));
+    }
+    public boolean writeValues(Map<String, String> values){
+        tagData.putAll(values);
+        return true;
     }
 }
