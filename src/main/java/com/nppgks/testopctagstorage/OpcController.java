@@ -20,7 +20,7 @@ public class OpcController {
         return true;
     }
 
-    @GetMapping("/reconnect")
+    @PostMapping("/reconnect")
     public boolean reconnect() throws InterruptedException {
         Thread.sleep(1000);
         return true;
