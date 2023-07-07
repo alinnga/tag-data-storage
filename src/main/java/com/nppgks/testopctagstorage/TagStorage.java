@@ -21,7 +21,7 @@ public class TagStorage {
                 87.6,65.5,43.7,21.9,11.1
                 ]
                 """;
-        tagData.put("WinCC_OA.rep_test.Q_ij", Q_ij.replaceAll("\n",""));
+        tagData.put("WinCC_OA.mi3622.Q_ij", Q_ij.replaceAll("\n",""));
 
         String N_e_ij = """
                 [
@@ -32,7 +32,7 @@ public class TagStorage {
                 33012,33007,30262,20623,10500
                 ]
                 """;
-        tagData.put("WinCC_OA.rep_test.N_e_ij", N_e_ij.replaceAll("\n",""));
+        tagData.put("WinCC_OA.mi3622.N_e_ij", N_e_ij.replaceAll("\n",""));
 
         String N_p_ij = """
                 [
@@ -43,7 +43,7 @@ public class TagStorage {
                 33013,33007,30261,20624,10500
                 ]
                 """;
-        tagData.put("WinCC_OA.rep_test.N_p_ij", N_p_ij.replaceAll("\n",""));
+        tagData.put("WinCC_OA.mi3622.N_p_ij", N_p_ij.replaceAll("\n",""));
 
         String T_ij = """
                 [
@@ -54,7 +54,7 @@ public class TagStorage {
                 5.3,7.3,10.3,14.3,14.3
                 ]
                 """;
-        tagData.put("WinCC_OA.rep_test.T_ij", T_ij.replaceAll("\n",""));
+        tagData.put("WinCC_OA.mi3622.T_ij", T_ij.replaceAll("\n",""));
 
         String M_ij = """
                 [
@@ -65,56 +65,82 @@ public class TagStorage {
                 145.8040,145.778,133.65,91.0974,46.3740
                 ]
                 """;
-        tagData.put("WinCC_OA.rep_test.M_ij", M_ij.replaceAll("\n",""));
+        tagData.put("WinCC_OA.mi3622.M_ij", M_ij.replaceAll("\n",""));
 
-        tagData.put("WinCC_OA.rep_test.Q_e_arr", "[21,65,87.5,272.6]");
+        tagData.put("WinCC_OA.mi3622.Q_e_arr", "[21,65,87.5,272.6]");
 
-        tagData.put("WinCC_OA.rep_test.K_e_arr", "[226.4151,226.4151,226.4151,226.4151]");
+        tagData.put("WinCC_OA.mi3622.K_e_arr", "[226.4151,226.4151,226.4151,226.4151]");
 
-        tagData.put("WinCC_OA.rep_test.f_p_max", "10000");
+        tagData.put("WinCC_OA.mi3622.f_p_max", "10000");
 
-        tagData.put("WinCC_OA.rep_test.Q_p_max", "159");
+        tagData.put("WinCC_OA.mi3622.Q_p_max", "159");
 
-        tagData.put("WinCC_OA.rep_test.MF_p", "1");
-        tagData.put("WinCC_OA.rep_test.Q_p", "[0,68,136,204,272]");
+        tagData.put("WinCC_OA.mi3622.MF_p", "1");
+        tagData.put("WinCC_OA.mi3622.Q_p", "[0,68,136,204,272]");
 
-        tagData.put("WinCC_OA.rep_test.theta_e", "0.11");
+        tagData.put("WinCC_OA.mi3622.theta_e", "0.11");
 
-        tagData.put("WinCC_OA.rep_test.theta_N", "0.02");
-        tagData.put("WinCC_OA.rep_test.theta_p", "");
-        tagData.put("WinCC_OA.rep_test.theta_t", "");
+        tagData.put("WinCC_OA.mi3622.theta_N", "0.02");
+        tagData.put("WinCC_OA.mi3622.theta_p", "");
+        tagData.put("WinCC_OA.mi3622.theta_t", "");
 
-        tagData.put("WinCC_OA.rep_test.ZS", "0.041");
+        tagData.put("WinCC_OA.mi3622.ZS", "0.041");
 
-        tagData.put("WinCC_OA.rep_test.f_p", "[0,2500,5000,7500,10000]");
-        tagData.put("WinCC_OA.rep_test.K_y", "[226.4151,226.4151,226.4151,226.4151,226.4151]");
+        tagData.put("WinCC_OA.mi3622.f_p", "[0,2500,5000,7500,10000]");
+        tagData.put("WinCC_OA.mi3622.K_y", "[226.4151,226.4151,226.4151,226.4151,226.4151]");
 
-        tagData.put("WinCC_OA.rep_test.measureCount", "5");
-        tagData.put("WinCC_OA.rep_test.pointsCount", "5");
+        tagData.put("WinCC_OA.mi3622.measureCount", "5");
+        tagData.put("WinCC_OA.mi3622.pointsCount", "5");
 
-        tagData.put("WinCC_OA.rep_test.check_inspection", "Осмотрели");
-        tagData.put("WinCC_OA.rep_test.check_leakproofness", "Герметично");
-        tagData.put("WinCC_OA.rep_test.check_software", "Соответствует");
-        tagData.put("WinCC_OA.rep_test.check_testing", "Опробовали");
-        tagData.put("WinCC_OA.rep_test.CPM_name", "Micro Motion");
-        tagData.put("WinCC_OA.rep_test.CPM_number", "89807767864629");
-        tagData.put("WinCC_OA.rep_test.CPM_owner", "Ямал СПГ");
-        tagData.put("WinCC_OA.rep_test.calc_place", "УКУ ДТ, ИЛ-2");
-        tagData.put("WinCC_OA.rep_test.calc_method", "МИ 3622-2020");
-        tagData.put("WinCC_OA.rep_test.inspector_full_name", "Мишурин М.Г.");
-        tagData.put("WinCC_OA.rep_test.inspector_position", "Инженер метрологии");
-        tagData.put("WinCC_OA.rep_test.PR_name", "Micro Motion");
-        tagData.put("WinCC_OA.rep_test.PR_number", "0947873986");
+        tagData.put("WinCC_OA.mi3622.check_inspection", "Осмотрели");
+        tagData.put("WinCC_OA.mi3622.check_leakproofness", "Герметично");
+        tagData.put("WinCC_OA.mi3622.check_software", "Соответствует");
+        tagData.put("WinCC_OA.mi3622.check_testing", "Опробовали");
+        tagData.put("WinCC_OA.mi3622.CPM_name", "Micro Motion");
+        tagData.put("WinCC_OA.mi3622.CPM_number", "89807767864629");
+        tagData.put("WinCC_OA.mi3622.CPM_owner", "Ямал СПГ");
+        tagData.put("WinCC_OA.mi3622.poverka_place", "УКУ ДТ, ИЛ-2");
+        tagData.put("WinCC_OA.mi3622.poverka_method", "МИ 3622-2020");
+        tagData.put("WinCC_OA.mi3622.inspector_full_name", "Мишурин М.Г.");
+        tagData.put("WinCC_OA.mi3622.inspector_position", "Инженер метрологии");
+        tagData.put("WinCC_OA.mi3622.PR_name", "Micro Motion");
+        tagData.put("WinCC_OA.mi3622.PR_number", "0947873986");
 
-        tagData.put("WinCC_OA.rep_test.MFOrK", "MF");
-        tagData.put("WinCC_OA.rep_test.zeroStabilityCorr", "true");
-        tagData.put("WinCC_OA.rep_test.operatingOrControlCPM", "контрольный");
-        tagData.put("WinCC_OA.rep_test.rangeType", "рабочий диапазон");
-        tagData.put("WinCC_OA.rep_test.protocolNumber", "230");
+        tagData.put("WinCC_OA.mi3622.MFOrK", "MF");
+        tagData.put("WinCC_OA.mi3622.zeroStabilityCorr", "true");
+        tagData.put("WinCC_OA.mi3622.operatingOrControlCPM", "контрольный");
+        tagData.put("WinCC_OA.mi3622.rangeType", "рабочий диапазон");
+        tagData.put("WinCC_OA.mi3622.protocolNumber", "230");
 
         tagData.put("ns=0;i=50240", null);
         tagData.put("ns=0;i=50251", null);
         tagData.put("ns=0;i=50242", null);
+
+
+        // Шапка акта приема-сдачи
+        tagData.put("WinCC_OA.accAct.acceptanceActNumber", "44.2023");
+        tagData.put("WinCC_OA.accAct.acceptanceActDate", "13.02.2023");
+        tagData.put("WinCC_OA.accAct.oilAcceptancePoint", "МУПН Ен-Яхтинское м/р");
+        tagData.put("WinCC_OA.accAct.pointOwner", "ООО \"Газпронефть-Заполярье\"");
+        tagData.put("WinCC_OA.accAct.SIKN", "№1524");
+        tagData.put("WinCC_OA.accAct.deliverOrg", "");
+        tagData.put("WinCC_OA.accAct.deliverNameTitle", "Лазарев М.А.");
+        tagData.put("WinCC_OA.accAct.deliverProxyDate", "24.02.2022г");
+        tagData.put("WinCC_OA.accAct.deliverProxyNumber", "Д-33");
+        tagData.put("WinCC_OA.accAct.receiverOrg", "");
+        tagData.put("WinCC_OA.accAct.receiverNameTitle", "");
+        tagData.put("WinCC_OA.accAct.receiverProxyDate", "");
+        tagData.put("WinCC_OA.accAct.receiverProxyNumber", "");
+
+        // показатели акта приема-сдачи
+        tagData.put("WinCC_OA.accAct.prevEndVol_shift1", "348025");
+        tagData.put("WinCC_OA.accAct.prevEndVol_shift2", "348737");
+        tagData.put("WinCC_OA.accAct.grossOilMass_shift1", "574");
+        tagData.put("WinCC_OA.accAct.grossOilMass_shift2", "575");
+
+        // нижняя часть акта
+        tagData.put("WinCC_OA.accAct.oilNetMassInWords", "одна тысяча сто сорок восемь т.");
+        tagData.put("WinCC_OA.accAct.GOST", "1.0.1.1");
     }
 
     public void generateTags(){

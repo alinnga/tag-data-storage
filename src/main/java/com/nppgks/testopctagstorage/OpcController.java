@@ -54,4 +54,9 @@ public class OpcController {
         }
         return tagStorage.writeValues(newMap);
     }
+
+    @GetMapping("/allTags")
+    public Map<String, String> getAllTags(){
+        return tagStorage.tagData;
+    }
 }
