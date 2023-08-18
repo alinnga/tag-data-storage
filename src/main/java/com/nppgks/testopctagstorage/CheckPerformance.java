@@ -3,12 +3,14 @@ package com.nppgks.testopctagstorage;
 public class CheckPerformance {
     public static void main(String[] args) {
         double[][] arr = new double[1000][1000];
+        System.out.println("Start");
 
-        for(int i = 0; i< 100; i++){
+        for(int i = 0; i< 1000; i++){
             long durationByRow = getDurationByRow(arr);
             long durationByCol = getDurationByCol(arr);
             if(durationByRow>durationByCol) System.out.println("By row takes more time than by col");
         }
+        System.out.println("End");
     }
 
     static long getDurationByRow(double[][] arr){
