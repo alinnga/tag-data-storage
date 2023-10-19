@@ -12,6 +12,22 @@ public class TagStorage {
     public Map<String, String> tagData = new HashMap<>();
 
     TagStorage(){
+
+        tagData.put("ns=0;i=50240", null);
+        tagData.put("ns=0;i=50251", null);
+        tagData.put("ns=0;i=50242", null);
+
+        putMi3622InitialTags();
+        putAcceptanceActInitialTags();
+        putMi3272InitialTags();
+        putKmhViscometerInitialTags();
+        putKmhDensityMeterInitialTags();
+        putKmhMassmByPuInitialTags();
+        putKmhMassmByMassmInitialTags();
+        putKmhMoistureMeterInitialTags();
+    }
+
+    public void putMi3622InitialTags(){
         String Q_ij = """
                 [
                 87.5,65.7,43.9,21.9,11.1,
@@ -21,7 +37,7 @@ public class TagStorage {
                 87.6,65.5,43.7,21.9,11.1
                 ]
                 """;
-        tagData.put("WinCC_OA.mi3622.Q_ij", Q_ij.replaceAll("\n",""));
+        tagData.put("mi3622.Q_ij", Q_ij.replaceAll("\n",""));
 
         String N_e_ij = """
                 [
@@ -32,7 +48,7 @@ public class TagStorage {
                 33012,33007,30262,20623,10500
                 ]
                 """;
-        tagData.put("WinCC_OA.mi3622.N_e_ij", N_e_ij.replaceAll("\n",""));
+        tagData.put("mi3622.N_e_ij", N_e_ij.replaceAll("\n",""));
 
         String N_p_ij = """
                 [
@@ -43,7 +59,7 @@ public class TagStorage {
                 33013,33007,30261,20624,10500
                 ]
                 """;
-        tagData.put("WinCC_OA.mi3622.N_p_ij", N_p_ij.replaceAll("\n",""));
+        tagData.put("mi3622.N_p_ij", N_p_ij.replaceAll("\n",""));
 
         String T_ij = """
                 [
@@ -54,7 +70,7 @@ public class TagStorage {
                 5.3,7.3,10.3,14.3,14.3
                 ]
                 """;
-        tagData.put("WinCC_OA.mi3622.T_ij", T_ij.replaceAll("\n",""));
+        tagData.put("mi3622.T_ij", T_ij.replaceAll("\n",""));
 
         String M_ij = """
                 [
@@ -65,88 +81,243 @@ public class TagStorage {
                 145.8040,145.778,133.65,91.0974,46.3740
                 ]
                 """;
-        tagData.put("WinCC_OA.mi3622.M_ij", M_ij.replaceAll("\n",""));
+        tagData.put("mi3622.M_ij", M_ij.replaceAll("\n",""));
 
-        tagData.put("WinCC_OA.mi3622.Q_e_arr", "[21,65,87.5,272.6]");
+        tagData.put("mi3622.Q_e_arr", "[21,65,87.5,272.6]");
 
-        tagData.put("WinCC_OA.mi3622.K_e_arr", "[226.4151,226.4151,226.4151,226.4151]");
+        tagData.put("mi3622.K_e_arr", "[226.4151,226.4151,226.4151,226.4151]");
 
-        tagData.put("WinCC_OA.mi3622.f_p_max", "10000");
+        tagData.put("mi3622.f_p_max", "10000");
 
-        tagData.put("WinCC_OA.mi3622.Q_p_max", "159");
+        tagData.put("mi3622.Q_p_max", "159");
 
-        tagData.put("WinCC_OA.mi3622.MF_p", "1");
-        tagData.put("WinCC_OA.mi3622.Q_p", "[0,68,136,204,272]");
+        tagData.put("mi3622.MF_p", "1");
+        tagData.put("mi3622.Q_p", "[0,68,136,204,272]");
 
-        tagData.put("WinCC_OA.mi3622.theta_e", "0.11");
+        tagData.put("mi3622.theta_e", "0.11");
 
-        tagData.put("WinCC_OA.mi3622.theta_N", "0.02");
-        tagData.put("WinCC_OA.mi3622.theta_p", "");
-        tagData.put("WinCC_OA.mi3622.theta_t", "");
+        tagData.put("mi3622.theta_N", "0.02");
+        tagData.put("mi3622.theta_p", "");
+        tagData.put("mi3622.theta_t", "");
 
-        tagData.put("WinCC_OA.mi3622.ZS", "0.041");
+        tagData.put("mi3622.ZS", "0.041");
 
-        tagData.put("WinCC_OA.mi3622.f_p", "[0,2500,5000,7500,10000]");
-        tagData.put("WinCC_OA.mi3622.K_y", "[226.4151,226.4151,226.4151,226.4151,226.4151]");
+        tagData.put("mi3622.f_p", "[0,2500,5000,7500,10000]");
+        tagData.put("mi3622.K_y", "[226.4151,226.4151,226.4151,226.4151,226.4151]");
 
-        tagData.put("WinCC_OA.mi3622.measureCount", "5");
-        tagData.put("WinCC_OA.mi3622.pointsCount", "5");
+        tagData.put("mi3622.measureCount", "5");
+        tagData.put("mi3622.pointsCount", "5");
 
-        tagData.put("WinCC_OA.mi3622.check_inspection", "Осмотрели");
-        tagData.put("WinCC_OA.mi3622.check_leakproofness", "Герметично");
-        tagData.put("WinCC_OA.mi3622.check_software", "Соответствует");
-        tagData.put("WinCC_OA.mi3622.check_testing", "Опробовали");
-        tagData.put("WinCC_OA.mi3622.CPM_name", "Micro Motion");
-        tagData.put("WinCC_OA.mi3622.CPM_number", "89807767864629");
-        tagData.put("WinCC_OA.mi3622.CPM_owner", "Ямал СПГ");
-        tagData.put("WinCC_OA.mi3622.poverka_place", "УКУ ДТ, ИЛ-2");
-        tagData.put("WinCC_OA.mi3622.poverka_method", "МИ 3622-2020");
-        tagData.put("WinCC_OA.mi3622.inspector_full_name", "Мишурин М.Г.");
-        tagData.put("WinCC_OA.mi3622.inspector_position", "Инженер метрологии");
-        tagData.put("WinCC_OA.mi3622.PR_name", "Micro Motion");
-        tagData.put("WinCC_OA.mi3622.PR_number", "0947873986");
+        tagData.put("mi3622.check_inspection", "Осмотрели");
+        tagData.put("mi3622.check_leakproofness", "Герметично");
+        tagData.put("mi3622.check_software", "Соответствует");
+        tagData.put("mi3622.check_testing", "Опробовали");
+        tagData.put("mi3622.CPM_name", "Micro Motion");
+        tagData.put("mi3622.CPM_number", "89807767864629");
+        tagData.put("mi3622.CPM_owner", "Ямал СПГ");
+        tagData.put("mi3622.poverka_place", "УКУ ДТ, ИЛ-2");
+        tagData.put("mi3622.poverka_method", "МИ 3622-2020");
+        tagData.put("mi3622.inspector_full_name", "Мишурин М.Г.");
+        tagData.put("mi3622.inspector_position", "Инженер метрологии");
+        tagData.put("mi3622.PR_name", "Micro Motion");
+        tagData.put("mi3622.PR_number", "0947873986");
 
-        tagData.put("WinCC_OA.mi3622.MFOrK", "MF");
-        tagData.put("WinCC_OA.mi3622.zeroStabilityCorr", "true");
-        tagData.put("WinCC_OA.mi3622.operatingOrControlCPM", "контрольный");
-        tagData.put("WinCC_OA.mi3622.rangeType", "рабочий диапазон");
-        tagData.put("WinCC_OA.mi3622.protocolNumber", "230");
-
-        tagData.put("ns=0;i=50240", null);
-        tagData.put("ns=0;i=50251", null);
-        tagData.put("ns=0;i=50242", null);
-
-
-        // Шапка акта приема-сдачи
-        tagData.put("WinCC_OA.accAct.acceptanceActNumber", "44.2023");
-        tagData.put("WinCC_OA.accAct.acceptanceActDate", "13.02.2023");
-        tagData.put("WinCC_OA.accAct.oilAcceptancePoint", "МУПН Ен-Яхтинское м/р");
-        tagData.put("WinCC_OA.accAct.pointOwner", "ООО \"Газпронефть-Заполярье\"");
-        tagData.put("WinCC_OA.accAct.SIKN", "№1524");
-        tagData.put("WinCC_OA.accAct.deliverOrg", "");
-        tagData.put("WinCC_OA.accAct.deliverNameTitle", "Лазарев М.А.");
-        tagData.put("WinCC_OA.accAct.deliverProxyDate", "24.02.2022г");
-        tagData.put("WinCC_OA.accAct.deliverProxyNumber", "Д-33");
-        tagData.put("WinCC_OA.accAct.receiverOrg", "");
-        tagData.put("WinCC_OA.accAct.receiverNameTitle", "");
-        tagData.put("WinCC_OA.accAct.receiverProxyDate", "");
-        tagData.put("WinCC_OA.accAct.receiverProxyNumber", "");
-
-        // показатели акта приема-сдачи
-        tagData.put("WinCC_OA.accAct.prevEndVol_shift1", "348025");
-        tagData.put("WinCC_OA.accAct.prevEndVol_shift2", "348737");
-        tagData.put("WinCC_OA.accAct.grossOilMass_shift1", "574");
-        tagData.put("WinCC_OA.accAct.grossOilMass_shift2", "575");
-
-        // нижняя часть акта
-        tagData.put("WinCC_OA.accAct.oilNetMassInWords", "одна тысяча сто сорок восемь т.");
-        tagData.put("WinCC_OA.accAct.GOST", "1.0.1.1");
-
-        putMi3272InitialTags(tagData);
-        putKmhViscometerInitialTags(tagData);
+        tagData.put("mi3622.MFOrK", "MF");
+        tagData.put("mi3622.zeroStabilityCorr", "true");
+        tagData.put("mi3622.operatingOrControlCPM", "контрольный");
+        tagData.put("mi3622.rangeType", "рабочий диапазон");
+        tagData.put("mi3622.protocolNumber", "230");
     }
 
-    public void putKmhViscometerInitialTags(Map<String, String> tagData){
+    public void putAcceptanceActInitialTags(){
+        // Шапка акта приема-сдачи
+        tagData.put("accAct.acceptanceActNumber", "44.2023");
+        tagData.put("accAct.acceptanceActDate", "13.02.2023");
+        tagData.put("accAct.oilAcceptancePoint", "МУПН Ен-Яхтинское м/р");
+        tagData.put("accAct.pointOwner", "ООО \"Газпронефть-Заполярье\"");
+        tagData.put("accAct.SIKN", "№1524");
+        tagData.put("accAct.deliverOrg", "ООО \"ИНК\"");
+        tagData.put("accAct.deliverNameTitle", "Лазарев М.А.");
+        tagData.put("accAct.deliverProxyDate", "24.02.2022г");
+        tagData.put("accAct.deliverProxyNumber", "Д-33");
+        tagData.put("accAct.receiverOrg", "ООО \"Транснефть-Восток\"");
+        tagData.put("accAct.receiverNameTitle", "");
+        tagData.put("accAct.receiverProxyDate", "");
+        tagData.put("accAct.receiverProxyNumber", "");
+
+        // показатели акта приема-сдачи
+        tagData.put("accAct.prevEndVol_shift1", "348025");
+        tagData.put("accAct.prevEndVol_shift2", "348737");
+        tagData.put("accAct.grossOilMass_shift1", "574");
+        tagData.put("accAct.grossOilMass_shift2", "575");
+
+        // нижняя часть акта
+        tagData.put("accAct.oilNetMassInWords", "одна тысяча сто сорок восемь т.");
+        tagData.put("accAct.GOST", "1.0.1.1");
+        tagData.put("accAct.deliverNameFooter", "Ермолаев К.В.");
+        tagData.put("accAct.receiverNameFooter", "Пушкин А.С.");
+    }
+
+    public void putKmhMoistureMeterInitialTags() {
+        tagData.put("kmhMoistMet.protocolNumber", "020-19");
+        tagData.put("kmhMoistMet.siknNumber", "1516");
+        tagData.put("kmhMoistMet.place_name", "ПСП Марковское ООО «ИНК»");
+        tagData.put("kmhMoistMet.reserve_mm_type", "УДВН-1пм");
+        tagData.put("kmhMoistMet.working_mm_type", "УДВН-1пм");
+        tagData.put("kmhMoistMet.reserve_mm_number", "2207");
+        tagData.put("kmhMoistMet.working_mm_number", "2208");
+        tagData.put("kmhMoistMet.reserve_mm_date", "02.07.2018");
+        tagData.put("kmhMoistMet.working_mm_date", "25.04.2018");
+        tagData.put("kmhMoistMet.reserve_mm_delta_W_kv", "0.06");
+        tagData.put("kmhMoistMet.working_mm_delta_W_kv", "0.06");
+        tagData.put("kmhMoistMet.reserve_mm_delta_W_0", "0.14");
+        tagData.put("kmhMoistMet.working_mm_delta_W_0", "0.14");
+        tagData.put("kmhMoistMet.measure_time", "[\"4:48\", \"4:58\", \"5:08\"]");
+        tagData.put("kmhMoistMet.work_mm_phi_v", "[0.02, 0.02, 0.01]");
+        tagData.put("kmhMoistMet.reserve_mm_phi_v", "[0.00, 0.00, 0.00]");
+        tagData.put("kmhMoistMet.work_mm_W_kv", "[0.02, 0.02, 0.01]");
+        tagData.put("kmhMoistMet.reserve_mm_W_kv", "[0.00, 0.00, 0.00]");
+        tagData.put("kmhMoistMet.W_0", "[0.03, 0.06, 0.03]");
+        tagData.put("kmhMoistMet.rho_v", "[824.2, 824.2, 824.2]");
+        tagData.put("kmhMoistMet.deliverOrg", "ООО \"ИНК\"");
+        tagData.put("kmhMoistMet.metrologistName", "Титов А.В.");
+        tagData.put("kmhMoistMet.chemistName", "Рабинович Ю.Д.");
+        tagData.put("kmhMoistMet.receiverOrg", "ООО \"Транснефть-Восток\"");
+        tagData.put("kmhMoistMet.receiverPosition", "Мастер ПСП НПС-7");
+        tagData.put("kmhMoistMet.receiverName", "Ермолаев К.В.");
+        tagData.put("kmhMoistMet.serviceOrg", "ЗАО НИЦ \"Инкомсистем\"");
+        tagData.put("kmhMoistMet.servicePosition", "Инженер ТО и С");
+        tagData.put("kmhMoistMet.serviceName", "Рахматуллин Р.Ф.");
+    }
+
+    public void putKmhMassmByMassmInitialTags() {
+        tagData.put("kmhMassmByMassm.protocolNumber", "1");
+        tagData.put("kmhMassmByMassm.ilNumber", "2");
+        tagData.put("kmhMassmByMassm.siknNumber", "1516");
+        tagData.put("kmhMassmByMassm.place_name", "ПСП Марковское ООО «ИНК»");
+        tagData.put("kmhMassmByMassm.work_mpr_sensor_type", "CMFHC2 ДУ 200");
+        tagData.put("kmhMassmByMassm.work_mpr_pep_type", "2700R");
+        tagData.put("kmhMassmByMassm.contr_mpr_sensor_type", "CMFHC2 ДУ 200");
+        tagData.put("kmhMassmByMassm.contr_mpr_pep_type", "2700R");
+        tagData.put("kmhMassmByMassm.work_mpr_sensor_number", "12111193");
+        tagData.put("kmhMassmByMassm.work_mpr_pep_number", "3847396");
+        tagData.put("kmhMassmByMassm.contr_mpr_sensor_number", "12110976");
+        tagData.put("kmhMassmByMassm.contr_mpr_pep_number", "3847397");
+        tagData.put("kmhMassmByMassm.work_mpr_date", "09.10.2015");
+        tagData.put("kmhMassmByMassm.contr_mpr_date", "02.11.2015");
+        tagData.put("kmhMassmByMassm.mass", "30.00");
+        tagData.put("kmhMassmByMassm.Q", "[540.39, 540.35, 540.51]");
+        tagData.put("kmhMassmByMassm.M_il", "[30.043018, 30.018555, 30.037338]");
+        tagData.put("kmhMassmByMassm.M_ilk", "[30.032921, 30.007662, 30.027617]");
+        tagData.put("kmhMassmByMassm.delta_M", "[0.03, 0.04, 0.03]");
+        tagData.put("kmhMassmByMassm.deliver_org", "ООО \"Иркутская нефтяная компания\"");
+        tagData.put("kmhMassmByMassm.deliver_name", "Орлов П.Г.");
+        tagData.put("kmhMassmByMassm.receiver_org", "ООО \"Транснефть-Восток\"");
+        tagData.put("kmhMassmByMassm.receiver_name", "Корчнев К.А.");
+        tagData.put("kmhMassmByMassm.service_org", "ЗАО НИЦ \"Инкомсистем\"");
+        tagData.put("kmhMassmByMassm.service_name", "Атаев Г.А.");
+
+    }
+
+    public void putKmhMassmByPuInitialTags() {
+        tagData.put("kmhMassmByPu.place_name", "ПСП \"Марковское\"");
+        tagData.put("kmhMassmByPu.place_owner", "ООО \"ИНК\"");
+        tagData.put("kmhMassmByPu.massmeterSensor", "CMFHC2");
+        tagData.put("kmhMassmByPu.massmeterDu", "200");
+        tagData.put("kmhMassmByPu.massmeterNumber", "12110976");
+        tagData.put("kmhMassmByPu.pepModel", "2700R");
+        tagData.put("kmhMassmByPu.pepNumber", "3847397");
+        tagData.put("kmhMassmByPu.installedOn", "СИКН №1516");
+        tagData.put("kmhMassmByPu.cpType", "поверочная установка CP");
+        tagData.put("kmhMassmByPu.cpGrade", "первый");
+        tagData.put("kmhMassmByPu.cpNumber", "1505-10020479-1.1-1");
+        tagData.put("kmhMassmByPu.cpDate", "04.07.2017");
+        tagData.put("kmhMassmByPu.tprType", "HELIFLU TZN 200-800");
+        tagData.put("kmhMassmByPu.tprRange", "80-800");
+        tagData.put("kmhMassmByPu.tprNumber", "9022106");
+        tagData.put("kmhMassmByPu.ppType", "7835B");
+        tagData.put("kmhMassmByPu.ppNumber", "8000596");
+        tagData.put("kmhMassmByPu.ppDate", "13.03.2019");
+
+        tagData.put("kmhMassmByPu.pointsCount", "1");
+        tagData.put("kmhMassmByPu.measureCount", "3");
+        tagData.put("kmhMassmByPu.deliver_org", "ООО \"ИНК\"");
+        tagData.put("kmhMassmByPu.siknNumber", "1516");
+        tagData.put("kmhMassmByPu.protocolNumber", "052-19");
+        tagData.put("kmhMassmByPu.il_number_title", "1");
+        tagData.put("kmhMassmByPu.ilNumber", "1 - контрольная");
+        tagData.put("kmhMassmByPu.operatingFluid", "нефть");
+        tagData.put("kmhMassmByPu.V_KP_0", "0.119505");
+        tagData.put("kmhMassmByPu.delta_KP", "0.05");
+        tagData.put("kmhMassmByPu.D", "444.500");
+        tagData.put("kmhMassmByPu.E", "196500");
+        tagData.put("kmhMassmByPu.s", "31.750");
+        tagData.put("kmhMassmByPu.delta_t_KP", "0.2");
+        tagData.put("kmhMassmByPu.delta_PP", "0.03");
+        tagData.put("kmhMassmByPu.delta_t_PP", "0.2");
+        tagData.put("kmhMassmByPu.delta_UOI_K", "0.001");
+        tagData.put("kmhMassmByPu.KF_conf", "65454.5");
+        tagData.put("kmhMassmByPu.ZS", "0.06820");
+        tagData.put("kmhMassmByPu.alpha_cyl_t_sq", "0.0000216");
+        tagData.put("kmhMassmByPu.alpha_st_t", "0.00000144");
+        tagData.put("kmhMassmByPu.Q_TPR_ij", "[[439.667547, 438.898177, 439.119283, 439.208443, 439.057520]]");
+        tagData.put("kmhMassmByPu.N_TPR_ij_avg", "[[46.143475, 46.141003, 46.143757, 46.147202, 46.149117]]");
+        tagData.put("kmhMassmByPu.t_TPR_ij_avg", "[[16.020216, 16.023512, 16.025393, 16.031071, 16.039322]]");
+        tagData.put("kmhMassmByPu.P_TPR_ij_avg", "[[3.237774, 3.238343, 3.237746, 3.237154, 3.237032]]");
+        tagData.put("kmhMassmByPu.t_KP_ij_avg", "[[16.020216, 16.023512, 16.025393, 16.031071, 16.039322]]");
+        tagData.put("kmhMassmByPu.P_KP_ij_avg", "[[3.237774, 3.238343, 3.237746, 3.237154, 3.237032]]");
+        tagData.put("kmhMassmByPu.t_st_ij", "[[18.187569, 18.187569, 18.187569, 18.187569, 18.187569]]");
+        tagData.put("kmhMassmByPu.mass", "25.00");
+        tagData.put("kmhMassmByPu.Q_ij", "[[419.494659, 419.543671, 419.470978]]");
+        tagData.put("kmhMassmByPu.t_il", "[[16.026829, 16.033859, 16.036207]]");
+        tagData.put("kmhMassmByPu.P_il", "[[3.157158, 3.155969, 3.154463]]");
+        tagData.put("kmhMassmByPu.t_TPR", "[[16.041616, 16.048931, 16.056810]]");
+        tagData.put("kmhMassmByPu.P_TPR", "[[3.242779, 3.241624, 3.240480]]");
+        tagData.put("kmhMassmByPu.rho_TPR", "[[822.680725, 822.688354, 822.695496]]");
+        tagData.put("kmhMassmByPu.M_il", "[[25.068800, 25.037479, 25.046595]]");
+        tagData.put("kmhMassmByPu.M_TPR", "[[25.050127, 25.020527, 25.031399]]");
+        tagData.put("kmhMassmByPu.delta_M", "[[0.074541, 0.067759, 0.060704]]");
+        tagData.put("kmhMassmByPu.deliver_name", "Данькин Н.Ф.");
+        tagData.put("kmhMassmByPu.receiver_org", "ООО \"Транснефть-Восток\"");
+        tagData.put("kmhMassmByPu.receiver_name", "Хабибуллин И.И.");
+        tagData.put("kmhMassmByPu.service_org", "ООО \"СНГ\"");
+        tagData.put("kmhMassmByPu.service_name", "Шакиров Р.З.");
+
+    }
+
+    public void putKmhDensityMeterInitialTags() {
+        tagData.put("kmhDensMet.workingOrReserve", "рабочий");
+        tagData.put("kmhDensMet.protocolNumber", "45-16");
+        tagData.put("kmhDensMet.siknNumber", "1516");
+        tagData.put("kmhDensMet.place_name", "ПСП Марковское ООО «ИНК»");
+        tagData.put("kmhDensMet.pp_type", "Solartron 7835B");
+        tagData.put("kmhDensMet.areometer_type", "АНТ-1");
+        tagData.put("kmhDensMet.pp_number", "8000596");
+        tagData.put("kmhDensMet.areometer_number", "8000596");
+        tagData.put("kmhDensMet.pp_date", "09.10.2015");
+        tagData.put("kmhDensMet.areometer_date", "21.06.2012");
+        tagData.put("kmhDensMet.delta_pp", "±0,3");
+        tagData.put("kmhDensMet.delta_areometer", "±0,5");
+        tagData.put("kmhDensMet.delta_syst", "0.62");
+        tagData.put("kmhDensMet.delta_met", "0.6");
+        tagData.put("kmhDensMet.Q_i", "[4.95, 5.00, 4.88]");
+        tagData.put("kmhDensMet.t_pl_i", "[25.0, 25.0, 25.0]");
+        tagData.put("kmhDensMet.P_pl_i", "[2.92, 2.92, 2.93]");
+        tagData.put("kmhDensMet.rho_pl_i", "[821.7, 821.7, 821.7]");
+        tagData.put("kmhDensMet.rho_meas_i", "[821.1, 821.1, 820.9, 820.8, 821.1, 820.9]");
+        tagData.put("kmhDensMet.t_ar_i", "[25.5, 25.3, 25.6, 25.6, 25.7, 25.7]");
+        tagData.put("kmhDensMet.deliverOrg", "ООО «ИНК»");
+        tagData.put("kmhDensMet.metrologistName", "Н.В. Тростин");
+        tagData.put("kmhDensMet.chemistName", "Ю.Д. Рабинович");
+        tagData.put("kmhDensMet.receiverOrg", "ООО «Транснефть-Восток»");
+        tagData.put("kmhDensMet.receiverPosition", "Инженер по метрологии ПСП НПС-8");
+        tagData.put("kmhDensMet.receiverName", "А.Ю. Вялов");
+        tagData.put("kmhDensMet.serviceOrg", " ЗАО НИЦ «Инкомсистем»");
+        tagData.put("kmhDensMet.servicePosition", "Ст. инженер МС");
+        tagData.put("kmhDensMet.serviceName", "Д.Р. Габдулхаков");
+    }
+
+    public void putKmhViscometerInitialTags(){
         tagData.put("kmhVisc.protocolNumber", "018-19");
         tagData.put("kmhVisc.siknNumber", "1516");
         tagData.put("kmhVisc.place_name", "ПСП Марковское ООО «ИНК»");
@@ -178,7 +349,7 @@ public class TagStorage {
         tagData.put("kmhVisc.printSaveButtonsRequired", "true");
     }
 
-    public void putMi3272InitialTags(Map<String, String> tagData){
+    public void putMi3272InitialTags(){
         tagData.put("mi3272.measureCount", "10");
         tagData.put("mi3272.seriesCount", "5");
         tagData.put("mi3272.pointsCount", "5");
