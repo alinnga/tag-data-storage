@@ -25,6 +25,71 @@ public class TagStorage {
         putKmhMassmByPuInitialTags();
         putKmhMassmByMassmInitialTags();
         putKmhMoistureMeterInitialTags();
+        putOilQualityPassportInitialTags();
+    }
+    public void putOilQualityPassportInitialTags(){
+        tagData.put("oilQualPassp.export", "true");
+        tagData.put("oilQualPassp.passportNumber", "139/2");
+        tagData.put("oilQualPassp.date", "23.05.2019");
+        tagData.put("oilQualPassp.oilAcceptancePoint", "ПСП \"Марковское\" ООО \"ИНК\"");
+        tagData.put("oilQualPassp.labOrg", "ООО \"ИНК\"");
+        tagData.put("oilQualPassp.accreditationNumber", "№ RA.RU.518198");
+        tagData.put("oilQualPassp.SIKN", "№ 1516");
+        tagData.put("oilQualPassp.dateTimeSampling", "23.05.2019 12:00 − 24:00");
+
+        tagData.put("oilQualPassp.tempMethod", "МИ ФР.1.29.2016.24410");
+        tagData.put("oilQualPassp.tempResult", "17.5");
+
+        tagData.put("oilQualPassp.pressureMethod", "МИ ФР.1.29.2016.24410");
+        tagData.put("oilQualPassp.pressureResult", "3.72");
+
+        tagData.put("oilQualPassp.initialDensityMethod", "МИ ФР.1.29.2016.24410");
+        tagData.put("oilQualPassp.initialDensityResult", "821.1");
+
+        tagData.put("oilQualPassp.density20Method", "МИ ФР.1.29.2016.24410");
+        tagData.put("oilQualPassp.density20Result", "816.7");
+
+        tagData.put("oilQualPassp.density15Method", "МИ ФР.1.29.2016.24410");
+        tagData.put("oilQualPassp.density15Result", "820.5");
+
+        tagData.put("oilQualPassp.waterFractionMethod", "ГОСТ 2477");
+        tagData.put("oilQualPassp.waterFractionResult", "0.03");
+
+        tagData.put("oilQualPassp.chlorideSaltFractionMethod", "ГОСТ 21534 (Метод А)");
+        tagData.put("oilQualPassp.chlorideSaltFractionResult", "30.2");
+
+        tagData.put("oilQualPassp.admixtureFractionMethod", "ГОСТ 6370");
+        tagData.put("oilQualPassp.admixtureFractionResult", "0.0217");
+
+        tagData.put("oilQualPassp.sulfurFractionMethod", "ГОСТ Р 51947");
+        tagData.put("oilQualPassp.sulfurFractionResult", "0.19");
+
+        tagData.put("oilQualPassp.steamPressureMethod", "ГОСТ 1756");
+        tagData.put("oilQualPassp.steamPressureResult", "63.0");
+
+        tagData.put("oilQualPassp.fractionOutMethod", "ГОСТ 2177 (Метод Б)");
+        tagData.put("oilQualPassp.fractionOut200Result", "29.0");
+        tagData.put("oilQualPassp.fractionOut300Result", "49.0");
+
+        tagData.put("oilQualPassp.paraffinFractionMethod", "ГОСТ 11851 (Метод А)");
+        tagData.put("oilQualPassp.paraffinFractionResult", "1.3");
+
+        tagData.put("oilQualPassp.hydroSulfideFractionMethod", "ГОСТ Р 50802");
+        tagData.put("oilQualPassp.hydroSulfideFractionResult", "менее 2.0");
+
+        tagData.put("oilQualPassp.methFractionMethod", "ГОСТ Р 50802");
+        tagData.put("oilQualPassp.methFractionResult", "16.1");
+
+        tagData.put("oilQualPassp.organicFractionMethod", "ГОСТ Р 52247 (Метод А)");
+        tagData.put("oilQualPassp.organicFractionResult", "менее 1.0");
+
+        tagData.put("oilQualPassp.labName", "И.Н. Бирюкова");
+        tagData.put("oilQualPassp.deliverPosition", "оператор товарный");
+        tagData.put("oilQualPassp.deliverOrg", "ООО \"ИНК\"");
+        tagData.put("oilQualPassp.deliverName", "Е.А. Романов");
+        tagData.put("oilQualPassp.receiverPosition", "оператор товарный");
+        tagData.put("oilQualPassp.receiverOrg", "ООО \"Транснефть-Восток\"");
+        tagData.put("oilQualPassp.receiverName", "Т.А. Данькина");
     }
 
     public void putMi3622InitialTags(){
