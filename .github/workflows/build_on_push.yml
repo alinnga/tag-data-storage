@@ -33,4 +33,4 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Show log file
-      run: tail ./logs/application.log
+      run: tail -n20 ./logs/application.log
