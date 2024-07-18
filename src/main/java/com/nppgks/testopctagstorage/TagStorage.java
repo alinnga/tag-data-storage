@@ -1,15 +1,20 @@
 package com.nppgks.testopctagstorage;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
+@Getter
+@Setter
 @Component
 public class TagStorage {
 
-    public Map<String, String> tagData = new HashMap<>();
+    private Map<String, String> tagData = new HashMap<>();
 
     TagStorage() {
 
@@ -19,7 +24,7 @@ public class TagStorage {
 
         putMi3622_MFOperatingSubrange();
         putAcceptanceActInitialTags();
-        putMi3272CrudeOilPep();
+        putMi3272usedTprInKpPep();
         putKmhViscometerInitialTags();
         putKmhDensityMeterInitialTags();
         putKmhMassmByPuInitialTags();
@@ -770,11 +775,9 @@ public class TagStorage {
         tagData.put("kmhVisc.printSaveButtonsRequired", "true");
     }
 
-    public void putMi3272PPInKPPep() {
-        MI3272DataFiller.putWithoutTprPep(tagData, true);
-    }
     public void putMi3272CrudeOilPep() {
-        MI3272DataFiller.putWithoutTprPep(tagData, false);
+        writeValues(MI3272DataFiller.putWithoutTprPep(false));
+
         String W_w_ij = """
                 [[4.209,4.205,4.204,4.198812,4.197015],
                 [4.186310,4.354690,4.53453,4.632994,4.658260],
@@ -795,8 +798,8 @@ public class TagStorage {
 
 
     public void putMi3272usedTprInKpPep() {
-        //MI3272DataFiller.putTprCoeffInitData(tagData, false, false);
-        MI3272DataFiller.putRestInitDataWithTpr(tagData);
+        writeValues(MI3272DataFiller.putTprCoeffInitData(false, false));
+        writeValues(MI3272DataFiller.putRestInitDataWithTpr());
     }
 
     public void putMi3272usedTprInKpSoiSubrange() {
@@ -1332,7 +1335,7 @@ public class TagStorage {
                 [821.53613,821.40961,821.27844,821.20264,821.18408],
                 [821.73151,821.72784,821.7298,821.72992,821.72833],
                 [822.14197,822.06982,821.9577,821.93213,821.93219],
-                [821.64142,821.60706,821.5943,821.58459,821.57983]]      
+                [821.64142,821.60706,821.5943,821.58459,821.57983]]
                 """;
 
         String rho_PP_ij = """
@@ -1369,7 +1372,7 @@ public class TagStorage {
                 [821.53613,821.40961,821.27844,821.20264,821.18408],
                 [821.73151,821.72784,821.7298,821.72992,821.72833],
                 [822.14197,822.06982,821.9577,821.93213,821.93219],
-                [821.64142,821.60706,821.5943,821.58459,821.57983]]      
+                [821.64142,821.60706,821.5943,821.58459,821.57983]]
                 """;
 
         String N2_TPR_ij_avg = """
@@ -1638,6 +1641,17 @@ public class TagStorage {
 
     public boolean writeValues(Map<String, String> values) {
         tagData.putAll(values);
+        return true;
+    }
+
+    public boolean updateValues(Map<String, String> values) {
+        if(values != null && !values.isEmpty()) {
+            var prefix = values.keySet().iterator().next().split("\\.")[0];
+
+            tagData.keySet().removeIf(key -> key.startsWith(prefix));
+            tagData.putAll(values);
+        }
+
         return true;
     }
 }

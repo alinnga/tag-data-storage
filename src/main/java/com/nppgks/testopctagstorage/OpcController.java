@@ -30,7 +30,7 @@ public class OpcController {
     public Map<String, String> getTagData(@RequestBody List<String> tagNames){
         tagStorage.generateTags();
         Map<String, String> resultMap = new HashMap<>();
-        Map<String, String> tagStorageMap = tagStorage.tagData;
+        Map<String, String> tagStorageMap = tagStorage.getTagData();
 
         tagNames.forEach(tn -> {
             if(tagStorageMap.containsKey(tn)){
@@ -57,6 +57,6 @@ public class OpcController {
 
     @GetMapping("/allTags")
     public Map<String, String> getAllTags(){
-        return tagStorage.tagData;
+        return tagStorage.getTagData();
     }
 }
