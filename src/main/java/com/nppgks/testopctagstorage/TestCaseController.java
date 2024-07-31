@@ -23,6 +23,17 @@ public class TestCaseController {
         tagStorage.updateValues(MI3272DataFiller.putRestInitDataWithTprInKPPPInBIKSOI());
     }
 
+    //case 2 stage 1. ТПР не в КП, ПП в БИК, СОИ
+    @GetMapping("/mi3272c2st1")
+    public void writeTagDataValuesCase2Stage1() {
+        tagStorage.updateValues(MI3272DataFiller.putTprCoeffInitData( false, false));
+    }
+
+    //case 2. ТПР не в КП, ПП в БИК, СОИ
+    @GetMapping("/mi3272c2st2")
+    public void writeTagDataValuesCase2Stage2() {
+        tagStorage.updateValues(MI3272DataFiller.putRestInitDataWithTprNotInKPPPInBIKSOI());
+    }
 
     // case 3. Без ТПР, ПП в БИК, ПЭП
     @GetMapping("/mi3272c3")
