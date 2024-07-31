@@ -1650,8 +1650,9 @@ public class TagStorage {
 
             tagData.keySet().removeIf(key -> key.startsWith(prefix));
             tagData.putAll(values);
+            return true;
         }
 
-        return true;
+        return false;
     }
 }
