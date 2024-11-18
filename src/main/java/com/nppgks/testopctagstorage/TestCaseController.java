@@ -14,7 +14,7 @@ public class TestCaseController {
     @Autowired
     private TagStorage tagStorage;
 
-    //case 1 stage 1. ТПР в КП, ПП в БИК, К-фактор в СОИ
+    //case 1 stage 1. ТПР в КП, ПП не в КП, К-фактор в СОИ
     @GetMapping("/mi3272c1st1")
     public String writeTagDataValuesCase1Stage1() {
         if(tagStorage.updateValues(MI3272DataFiller.putTprCoeffInitData(true, false))) {
@@ -24,7 +24,7 @@ public class TestCaseController {
 
     }
 
-    //case 1 stage 2. ТПР в КП, ПП в БИК, К-фактор в СОИ
+    //case 1 stage 2. ТПР в КП, ПП не в КП, К-фактор в СОИ
     @GetMapping("/mi3272c1st2")
     public String writeTagDataValuesCase1Stage2() {
         if(tagStorage.updateValues(MI3272DataFiller.putRestInitDataWithTprInKPPPInBIKSOI())) {
@@ -33,7 +33,7 @@ public class TestCaseController {
         return VALUES_SAME;
     }
 
-    //case 2 stage 1. ТПР не в КП, ПП в БИК, СОИ
+    //case 2 stage 1. ТПР не в КП, ПП не в КП, СОИ
     @GetMapping("/mi3272c2st1")
     public String writeTagDataValuesCase2Stage1() {
         if(tagStorage.updateValues(MI3272DataFiller.putTprCoeffInitData( false, false))) {
@@ -43,7 +43,7 @@ public class TestCaseController {
 
     }
 
-    //case 2. ТПР не в КП, ПП в БИК, СОИ
+    //case 2. ТПР не в КП, ПП не в КП, СОИ
     @GetMapping("/mi3272c2st2")
     public String writeTagDataValuesCase2Stage2() {
         if(tagStorage.updateValues(MI3272DataFiller.putRestInitDataWithTprNotInKPPPInBIKSOI())) {
@@ -52,7 +52,7 @@ public class TestCaseController {
         return VALUES_SAME;
     }
 
-    // case 3. Без ТПР, ПП в БИК, ПЭП
+    // case 3. Без ТПР, ПП не в КП, ПЭП
     @GetMapping("/mi3272c3")
     public String writeTagDataValuesCase3() {
         if(tagStorage.updateValues(MI3272DataFiller.putWithoutTprPep(false))) {
